@@ -23,26 +23,26 @@ public class Main {
 							"\n5 - Listar todos os usuários" +
 							"\n6 - Deletar todos os usuários" +
 							"\nS - Sair do programa");
-		System.out.println("Escolha uma das opções acima: ");
+		System.out.print("Escolha uma das opções acima: ");
 		String resposta = leitor.nextLine();
 		
 		while (!resposta.toLowerCase().equals("s")) {
 			
 			if (resposta.equals("1")) {
 				
-				System.out.println("Digite o cpf do usuário: ");
+				System.out.print("Digite o cpf do usuário: ");
 				Integer cpf = Integer.parseInt(leitor.nextLine());
 				
-				System.out.println("Digite o nome do usuário: ");
+				System.out.print("Digite o nome do usuário: ");
 				String nome = leitor.nextLine();
 				
-				System.out.println("Digite o sobrenome: ");
+				System.out.print("Digite o sobrenome: ");
 				String sobrenome = leitor.nextLine();
 				
-				System.out.println("Digite o email: ");
+				System.out.print("Digite o email: ");
 				String email = leitor.nextLine();
 				
-				System.out.println("Digite a data do seu nascimento (dd/mm/yyyy): ");
+				System.out.print("Digite a data do seu nascimento (dd/mm/yyyy): ");
 				String dataNascimento = leitor.nextLine();
 				Date dataConvertida = ConversorData.converterData(dataNascimento);
 				
@@ -56,10 +56,10 @@ public class Main {
 				}
 				
 			} else if (resposta.equals("2")) {
-				System.out.println("Digite o id do usuário: ");
+				System.out.print("Digite o id do usuário: ");
 				Integer id = Integer.parseInt(leitor.nextLine()); 
 				
-				System.out.println("Digite o cpf do usuário: ");
+				System.out.print("Digite o cpf do usuário: ");
 				Integer cpf = Integer.parseInt(leitor.nextLine());
 				
 				IdUser pk = new IdUser(id, cpf);
@@ -73,10 +73,10 @@ public class Main {
 				
 				
 			} else if (resposta.equals("3")) {
-				System.out.println("Digite o id do usuário: ");
+				System.out.print("Digite o id do usuário: ");
 				Integer id = Integer.parseInt(leitor.nextLine()); 
 				
-				System.out.println("Digite o cpf do usuário: ");
+				System.out.print("Digite o cpf do usuário: ");
 				Integer cpf = Integer.parseInt(leitor.nextLine());
 				
 				IdUser pk = new IdUser(id, cpf);
@@ -84,18 +84,18 @@ public class Main {
 				User usuario;
 				try {
 					usuario = userDAO.getByPK(pk);
-					System.out.println("Usuário encontrado!");
+					System.out.print("Usuário encontrado!");
 					
-					System.out.println("Digite o novo nome do usuário: ");
+					System.out.print("Digite o novo nome do usuário: ");
 					String nome = leitor.nextLine();
 					
-					System.out.println("Digite o novo sobrenome: ");
+					System.out.print("Digite o novo sobrenome: ");
 					String sobrenome = leitor.nextLine();
 					
-					System.out.println("Digite o novo email: ");
+					System.out.print("Digite o novo email: ");
 					String email = leitor.nextLine();
 					
-					System.out.println("Digite a data do seu nascimento (dd/mm/yyyy): ");
+					System.out.print("Digite a data do seu nascimento (dd/mm/yyyy): ");
 					String dataNascimento = leitor.nextLine();
 					Date dataConvertida = ConversorData.converterData(dataNascimento);
 					
@@ -113,10 +113,10 @@ public class Main {
 				}
 				
 			} else if (resposta.equals("4")) {
-				System.out.println("Digite o id do usuário: ");
+				System.out.print("Digite o id do usuário: ");
 				Integer id = Integer.parseInt(leitor.nextLine()); 
 				
-				System.out.println("Digite o cpf do usuário: ");
+				System.out.print("Digite o cpf do usuário: ");
 				Integer cpf = Integer.parseInt(leitor.nextLine());
 				
 				IdUser pk = new IdUser(id, cpf);
@@ -167,7 +167,7 @@ public class Main {
 					"\n5 - Listar todos os usuários" +
 					"\n6 - Deletar todos os usuários" +
 					"\nS - Sair do programa");
-			System.out.println("Escolha uma das opções acima: ");
+			System.out.print("Escolha uma das opções acima: ");
 			resposta = leitor.nextLine();
 		} 
 		

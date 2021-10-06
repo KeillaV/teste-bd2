@@ -9,7 +9,10 @@ import java.util.Date;
 // precisa implementar Serializable!
 @Entity
 @IdClass(IdUser.class)
-@Table(name = "Tabela_User")
+@Table(name = "Tabela_User", uniqueConstraints = {
+		@UniqueConstraint(name = "UC_CPF", columnNames = {"CPF"})
+})
+
 public class User implements Serializable {
  
 	private static final long serialVersionUID = 1L;
@@ -37,6 +40,10 @@ public class User implements Serializable {
     @Column(name = "EMAIL")
     private String email;
 
+    // Não será salvo no banco de dados:
+    @Transient
+    private String theme;
+    
     // Marcando o atributo (coluna) como data
     @Temporal(TemporalType.DATE)
     @Column(name = "BIRTHDAY")
@@ -100,8 +107,11 @@ public class User implements Serializable {
     } 
 
     public String toString() {
-		return "User [id=" + id + ", firstName=" + nome + ", lastName=" + sobrenome + ", email=" + email
-				+ ", birthday=" + dataNascimento + "]";
+		return "[" + nome + " " + sobrenome +
+					"\nID: " + id + 
+					"\nCPF: " + cpf +
+					"\nEmail: " + email
+				+ "\nData de nascimento:  " + dataNascimento + "] \n";
 	}
 
 }
